@@ -5,12 +5,6 @@
 - clean: ['~']
 
 - link:
-    # shell config
-    ~/.bashrc: bashrc
-    ~/.bash_aliases: shell/aliases.sh
-    ~/.zshrc: zshrc
-    ~/.zsh_aliases: shell/aliases.sh
-
     # git
     ~/.gitconfig: gitconfig
 
