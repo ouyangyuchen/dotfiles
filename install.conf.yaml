@@ -5,10 +5,15 @@
 - clean: ['~']
 
 - link:
+    # shell config
+    ~/.bashrc: bash/bashrc
+    ~/.bash_aliases: bash/bash_aliases
+
+    # editor
     ~/.vimrc: vimrc
     ~/.config/nvim: nvim
 
-- create:
+# - create:
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
