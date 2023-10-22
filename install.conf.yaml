@@ -6,6 +6,7 @@
 
 - link:
     ~/.vimrc: vimrc
+    ~/.config/nvim: nvim
 
 - create:
 
