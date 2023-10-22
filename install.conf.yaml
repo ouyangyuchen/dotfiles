@@ -9,6 +9,9 @@
     ~/.bashrc: bash/bashrc
     ~/.bash_aliases: bash/bash_aliases
 
+    # git
+    ~/.gitconfig: gitconfig
+
     # editor
     ~/.vimrc: vimrc
     ~/.config/nvim: nvim
