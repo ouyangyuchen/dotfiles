@@ -6,8 +6,10 @@
 
 - link:
     # shell config
-    ~/.bashrc: bash/bashrc
-    ~/.bash_aliases: bash/bash_aliases
+    ~/.bashrc: bashrc
+    ~/.bash_aliases: shell/aliases.sh
+    ~/.zshrc: zshrc
+    ~/.zsh_aliases: shell/aliases.sh
 
     # git
     ~/.gitconfig: gitconfig
