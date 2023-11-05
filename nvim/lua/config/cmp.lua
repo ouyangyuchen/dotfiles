@@ -4,6 +4,7 @@ set pumheight=10
 snoremap j <bs>ij
 snoremap k <bs>ik
 snoremap p <bs>ip
+snoremap x <bs>ix
 ]]
 
 local luasnip = require('luasnip')

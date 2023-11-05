@@ -10,7 +10,7 @@ require("lualine").setup {
   },
   sections = {
     lualine_a = { 'mode' },
-    lualine_b = { 'branch', 'diff', },
+    lualine_b = { 'branch' },
     lualine_c = {
       {
         'filename',
@@ -24,6 +24,7 @@ require("lualine").setup {
         update_in_insert = false, -- Update diagnostics in insert mode.
         always_visible = false,   -- Show diagnostics even if there are none.
       },
+      'diff',
     },
     lualine_x = { 'encoding', 'fileformat', 'filetype' },
     lualine_y = { 'progress' },
