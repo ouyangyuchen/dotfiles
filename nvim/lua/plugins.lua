@@ -37,6 +37,10 @@ return {
     dependencies = 'williamboman/mason.nvim'
   },
   {
+    'mhartington/formatter.nvim',
+    config = function () require('config.format') end,
+  },
+  {
     'hrsh7th/nvim-cmp',
     event = 'VeryLazy',
     dependencies = {
