@@ -14,7 +14,7 @@ require("lualine").setup {
     lualine_c = {
       {
         'filename',
-        path = 0,
+        path = 1,
         file_status = true,
       },
       {

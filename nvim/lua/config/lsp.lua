@@ -19,6 +19,9 @@ lspconfig.clangd.setup {
 lspconfig.pyright.setup {
   capability = capability,
 }
+lspconfig.gopls.setup {
+  capability = capability,
+}
 
 local signs = {
   { name = 'DiagnosticSignError', text = '' },

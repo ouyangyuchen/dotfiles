@@ -4,8 +4,24 @@ return {
   { 'numToStr/Comment.nvim', opts = {} },
   { 'windwp/nvim-autopairs', opts = {} },
 
-  -- git
+  -- utils
+  {
+    'nvim-tree/nvim-tree.lua', version = '*',
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
+    config = function() require('config.nvim-tree') end,
+  },
+  {
+    'nvim-telescope/telescope.nvim', tag = '0.1.3',
+    event = 'VeryLazy',
+    dependencies = { 'nvim-lua/plenary.nvim' },
+    config = function() require('config.telescope') end,
+  },
   { 'tpope/vim-fugitive' },
+  {
+    'lewis6991/gitsigns.nvim',
+    event = 'VeryLazy',
+    config = function() require('config.gitsigns') end,
+  },
 
   -- UI & appearance
   {
@@ -51,18 +67,5 @@ return {
       'hrsh7th/cmp-path',
     },
     config = function() require('config.cmp') end,
-  },
-  {
-    'nvim-tree/nvim-tree.lua',
-    version = '*',
-    dependencies = { 'nvim-tree/nvim-web-devicons' },
-    config = function() require('config.nvim-tree') end,
-  },
-  {
-    'nvim-telescope/telescope.nvim',
-    tag = '0.1.3',
-    event = 'VeryLazy',
-    dependencies = { 'nvim-lua/plenary.nvim' },
-    config = function() require('config.telescope') end,
   },
 }
