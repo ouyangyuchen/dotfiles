@@ -19,8 +19,8 @@ cmp.setup {
   },
   sources = {
     { name = 'nvim_lsp' },
-    { name = 'buffer' },
-    -- { name = 'path' }
+    -- { name = 'buffer' },
+    { name = 'path' }
   },
   formatting = {
     fields = { 'abbr', 'kind' },
