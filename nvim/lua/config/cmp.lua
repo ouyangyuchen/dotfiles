@@ -44,10 +44,13 @@ cmp.setup {
     },
     ["<CR>"] = cmp.mapping.confirm { select = true },
 
+    -- hit <Tab>:
+    -- complete current snippet (panel is visible)
+    -- jump to next position (panel is not visible)
     ["<Tab>"] = cmp.mapping(function(fallback)
         if cmp.visible() then
-          cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
-        elseif luasnip.expand_or_jumpable() then
+          cmp.confirm({ select = true })
+        elseif luasnip.expand_or_locally_jumpable() then
           luasnip.expand_or_jump()
         else
           fallback()
@@ -55,9 +58,7 @@ cmp.setup {
       end,
       { "i", "s", }),
     ["<S-Tab>"] = cmp.mapping(function(fallback)
-        if cmp.visible() then
-          cmp.select_prev_item({ behavior = cmp.SelectBehavior.Select })
-        elseif luasnip.jumpable(-1) then
+        if luasnip.locally_jumpable(-1) then
           luasnip.jump(-1)
         else
           fallback()
