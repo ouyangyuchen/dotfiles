@@ -24,10 +24,10 @@ lspconfig.gopls.setup {
 }
 
 local signs = {
-  { name = 'DiagnosticSignError', text = '' },
-  { name = 'DiagnosticSignWarn', text = '' },
-  { name = 'DiagnosticSignHint', text = '' },
-  { name = 'DiagnosticSignInfo', text = '' },
+  { name = 'DiagnosticSignError', text = '' },
+  { name = 'DiagnosticSignWarn', text = '' },
+  { name = 'DiagnosticSignHint', text = '' },
+  { name = 'DiagnosticSignInfo', text = '' },
 }
 for _, sign in ipairs(signs) do
   vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" })
@@ -42,7 +42,7 @@ vim.diagnostic.config {
 vim.keymap.set('n', 'gl', vim.diagnostic.open_float)
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
-vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist)
+-- vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist)  -- use <leader>xx instead
 
 -- Use LspAttach autocommand to only map the following keys
 -- after the language server attaches to the current buffer
@@ -53,13 +53,13 @@ vim.api.nvim_create_autocmd('LspAttach', {
     -- See `:help vim.lsp.*` for documentation on any of the below functions
     local opts = { buffer = ev.buf }
     vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
-    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
+    -- vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
     vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
     vim.keymap.set('n', 'gI', vim.lsp.buf.implementation, opts)
     vim.keymap.set('n', 'gK', vim.lsp.buf.signature_help, opts)
-    vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, opts)
+    -- vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, opts)
     vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, opts)
     vim.keymap.set({ 'n', 'v' }, '<space>ca', vim.lsp.buf.code_action, opts)
-    vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
+    -- vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
   end,
 })
