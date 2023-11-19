@@ -53,8 +53,8 @@ return {
     dependencies = 'williamboman/mason.nvim'
   },
   {
-    'mhartington/formatter.nvim',
-    config = function () require('config.format') end,
+    'nvimtools/none-ls.nvim',
+    config = function () require('config.lint') end,
   },
   {
     'hrsh7th/nvim-cmp',
