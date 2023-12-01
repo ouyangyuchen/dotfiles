@@ -6,10 +6,10 @@
 
 - link:
     # git
-    ~/.gitconfig: gitconfig
+    ~/.gitconfig: .gitconfig
 
     # editor
-    ~/.vimrc: vimrc
+    ~/.vimrc: .vimrc
     ~/.config/nvim: nvim
 
 # - create:
