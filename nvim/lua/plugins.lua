@@ -54,7 +54,7 @@ return {
   },
   {
     'nvimtools/none-ls.nvim',
-    config = function () require('config.lint') end,
+    config = function () require('config.null-ls') end,
   },
   {
     'hrsh7th/nvim-cmp',
