@@ -33,7 +33,7 @@ set shiftwidth=2 softtabstop=2
 set autoindent smartindent
 vnoremap < <gv
 vnoremap > >gv
-autocmd FileType * set formatoptions-=ro
+autocmd FileType * set formatoptions-=ro    " disable commenting in the next line
 
 " search
 set ignorecase smartcase
