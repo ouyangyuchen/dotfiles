@@ -2,24 +2,16 @@ return {
   {
     'neovim/nvim-lspconfig',
     config = function() require('config.lsp.settings') end,
-    dependencies = 'williamboman/mason.nvim',
+    dependencies = {
+      'williamboman/mason.nvim',
+      'hrsh7th/cmp-nvim-lsp',
+    },
   },
 
   {
     'williamboman/mason.nvim',
     build = ':MasonUpdate',
     opts = {},
-  },
-
-  {
-    'hrsh7th/nvim-cmp',
-    event = 'VeryLazy',
-    dependencies = {
-      'L3MON4D3/LuaSnip',
-      'onsails/lspkind.nvim',
-      'hrsh7th/cmp-nvim-lsp',
-    },
-    config = function() require('config.lsp.cmp') end,
   },
 
   {
