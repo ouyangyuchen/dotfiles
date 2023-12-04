@@ -19,8 +19,6 @@ cmp.setup {
   },
   sources = {
     { name = 'nvim_lsp' },
-    -- { name = 'buffer' },
-    { name = 'path' }
   },
   formatting = {
     fields = { 'abbr', 'kind' },
@@ -48,22 +46,22 @@ cmp.setup {
     -- complete current snippet (panel is visible)
     -- jump to next position (panel is not visible)
     ["<Tab>"] = cmp.mapping(function(fallback)
-        if cmp.visible() then
-          cmp.confirm({ select = true })
-        elseif luasnip.expand_or_locally_jumpable() then
-          luasnip.expand_or_jump()
-        else
-          fallback()
-        end
-      end,
+      if cmp.visible() then
+        cmp.confirm({ select = true })
+      elseif luasnip.expand_or_locally_jumpable() then
+        luasnip.expand_or_jump()
+      else
+        fallback()
+      end
+    end,
       { "i", "s", }),
     ["<S-Tab>"] = cmp.mapping(function(fallback)
-        if luasnip.locally_jumpable(-1) then
-          luasnip.jump(-1)
-        else
-          fallback()
-        end
-      end,
+      if luasnip.locally_jumpable(-1) then
+        luasnip.jump(-1)
+      else
+        fallback()
+      end
+    end,
       { "i", "s", }),
   },
 }

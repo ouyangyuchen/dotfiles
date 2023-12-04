@@ -1,10 +1,7 @@
-require('mason').setup {}
-
-local capability = require('cmp_nvim_lsp').default_capabilities()
 local lspconfig = require('lspconfig')
+local capability = require('cmp_nvim_lsp').default_capabilities()
 
--- TODO: Add lsp config here
--- vim.notify('lsp setup disabled')
+-- TODO: Add lsp configurations
 lspconfig.lua_ls.setup {
   capabilities = capability,
   settings = {
@@ -15,12 +12,6 @@ lspconfig.lua_ls.setup {
 }
 lspconfig.clangd.setup {
   capabilities = capability,
-}
-lspconfig.pyright.setup {
-  capability = capability,
-}
-lspconfig.gopls.setup {
-  capability = capability,
 }
 
 local signs = {
@@ -44,8 +35,14 @@ vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
 -- vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist)  -- use <leader>xx instead
 
--- Use LspAttach autocommand to only map the following keys
--- after the language server attaches to the current buffer
+vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+  border = "rounded",
+})
+
+vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
+  border = "rounded",
+})
+
 vim.api.nvim_create_autocmd('LspAttach', {
   group = vim.api.nvim_create_augroup('UserLspConfig', {}),
   callback = function(ev)

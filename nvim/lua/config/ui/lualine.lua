@@ -34,5 +34,4 @@ require("lualine").setup {
 
 vim.cmd[[
 set noshowmode
-set noruler
 ]]
