@@ -16,7 +16,6 @@ set timeoutlen=1000
 set updatetime=400
 
 " appearance
-set background=dark
 set termguicolors
 set wildmenu
 set number
@@ -29,7 +28,7 @@ noremap <expr> k v:count ? 'k' : 'gk'
 
 " indent
 set expandtab
-set shiftwidth=2 softtabstop=2
+set shiftwidth=4 softtabstop=4
 set autoindent smartindent
 vnoremap < <gv
 vnoremap > >gv
