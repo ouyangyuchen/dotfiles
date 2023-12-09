@@ -1,4 +1,4 @@
-vim.cmd[[
+vim.cmd [[
 set completeopt=noselect,menuone
 set pumheight=10
 snoremap j <bs>ij
@@ -12,6 +12,13 @@ require('luasnip.loaders.from_vscode').lazy_load()
 
 local cmp = require('cmp')
 cmp.setup {
+  enabled = function()
+    if require "cmp.config.context".in_treesitter_capture("comment") == true or require "cmp.config.context".in_syntax_group("Comment") then
+      return false
+    else
+      return true
+    end
+  end,
   snippet = {
     expand = function(args)
       luasnip.lsp_expand(args.body)
@@ -19,6 +26,8 @@ cmp.setup {
   },
   sources = {
     { name = 'nvim_lsp' },
+    { name = 'path' },
+    -- {name = 'buffer'},
   },
   formatting = {
     fields = { 'abbr', 'kind' },
@@ -46,22 +55,22 @@ cmp.setup {
     -- complete current snippet (panel is visible)
     -- jump to next position (panel is not visible)
     ["<Tab>"] = cmp.mapping(function(fallback)
-      if cmp.visible() then
-        cmp.confirm({ select = true })
-      elseif luasnip.expand_or_locally_jumpable() then
-        luasnip.expand_or_jump()
-      else
-        fallback()
-      end
-    end,
+        if cmp.visible() then
+          cmp.confirm({ select = true })
+        elseif luasnip.expand_or_locally_jumpable() then
+          luasnip.expand_or_jump()
+        else
+          fallback()
+        end
+      end,
       { "i", "s", }),
     ["<S-Tab>"] = cmp.mapping(function(fallback)
-      if luasnip.locally_jumpable(-1) then
-        luasnip.jump(-1)
-      else
-        fallback()
-      end
-    end,
+        if luasnip.locally_jumpable(-1) then
+          luasnip.jump(-1)
+        else
+          fallback()
+        end
+      end,
       { "i", "s", }),
   },
 }

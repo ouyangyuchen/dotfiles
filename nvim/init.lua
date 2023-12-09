@@ -5,7 +5,7 @@ if not status then
   return
 end
 
--- plugin manager, load plugins in lua/plugins.lua
+-- plugin manager, load plugins in ./lua/plugins
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system {

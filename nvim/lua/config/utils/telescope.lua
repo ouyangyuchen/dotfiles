@@ -24,6 +24,7 @@ require("telescope").setup {
     find_files = {
       theme = "dropdown",
       previewer = false,
+      no_ignore = true, -- show files ignored
     },
     live_grep = {
       theme = "ivy",

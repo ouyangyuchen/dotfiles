@@ -29,7 +29,7 @@ require('nvim-tree').setup {
     highlight_git = true,
   },
   diagnostics = { enable = true },
-  git = { enable = true, ignore = false },
+  git = { enable = true, ignore = true },
 }
 
 vim.cmd[[
