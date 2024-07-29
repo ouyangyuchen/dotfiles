@@ -1,17 +1,8 @@
-[alias]
-        aa = add .
-        br = branch -v
-        ca = commit --amend
-        cm = commit
-        co = checkout
-        st = status
 [core]
 	editor = nvim
 [user]
 	email = ouyangyuchen619@gmail.com
 	name = Yuchen Ouyang
-[credential]
-	helper = store
 [color]
         ui = auto
 [pull]

@@ -23,8 +23,6 @@ set signcolumn=yes
 set laststatus=2 showtabline=0 ruler
 set scrolloff=5
 set wrap
-noremap <expr> j v:count ? 'j' : 'gj'
-noremap <expr> k v:count ? 'k' : 'gk'
 
 " indent
 set expandtab
@@ -36,7 +34,7 @@ autocmd FileType * set formatoptions-=ro    " disable commenting in the next lin
 
 " search
 set ignorecase smartcase
-set incsearch nohlsearch
+set incsearch hlsearch
 nnoremap <silent> <C-n> :noh<cr>
 
 " edit text
@@ -44,6 +42,8 @@ nnoremap <silent> <M-k> :m .-2<CR>==
 nnoremap <silent> <M-j> :m .+1<CR>==
 vnoremap <silent> <M-j> :m '>+1<CR>gv=gv
 vnoremap <silent> <M-k> :m '<-2<CR>gv=gv
+noremap <expr> j v:count ? 'j' : 'gj'
+noremap <expr> k v:count ? 'k' : 'gk'
 
 " window
 set splitbelow splitright
@@ -70,3 +70,5 @@ nnoremap x "_dl
 vnoremap x "_d
 vnoremap p "_dP
 vnoremap <leader>y "*y
+nnoremap <leader>p "*p
+vnoremap <leader>p "*p
