@@ -1,5 +1,5 @@
-let mapleader=" "
-let maplocalleader="\\"
+let mapleader=' '
+let maplocalleader='\\'
 
 nnoremap <silent> <leader>e :Lex 30<cr>
 nmap Q <nop>
@@ -16,17 +16,19 @@ set timeoutlen=1000
 set updatetime=400
 
 " appearance
-set termguicolors
+if has('termguicolors')
+  set termguicolors
+endif
 set wildmenu
 set number
 set signcolumn=yes
 set laststatus=2 showtabline=0 ruler
 set scrolloff=5
-set wrap
+set nowrap
 
 " indent
 set expandtab
-set shiftwidth=4 softtabstop=4
+set shiftwidth=2 softtabstop=2
 set autoindent smartindent
 vnoremap < <gv
 vnoremap > >gv
@@ -34,7 +36,7 @@ autocmd FileType * set formatoptions-=ro    " disable commenting in the next lin
 
 " search
 set ignorecase smartcase
-set incsearch hlsearch
+set incsearch nohlsearch
 nnoremap <silent> <C-n> :noh<cr>
 
 " edit text
