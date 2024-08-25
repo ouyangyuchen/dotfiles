@@ -27,17 +27,10 @@ return {
     end,
   },
 
-  { -- better quickfix list
-    "folke/trouble.nvim",
+  {
+    "kevinhwang91/nvim-bqf",
     event = "VeryLazy",
-    config = function()
-      require("trouble").setup({
-        auto_close = true,
-        focus = true,
-      })
-      vim.keymap.set("n", "<leader>q", "<cmd>Trouble diagnostics toggle filter.buf=0<cr>")
-      vim.keymap.set("n", "<leader>xx", "<cmd>Trouble diagnostics toggle<cr>")
-    end,
+    opts = {},
   },
 
   { -- format files
