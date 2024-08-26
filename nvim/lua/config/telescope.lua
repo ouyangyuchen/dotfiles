@@ -24,6 +24,7 @@ require("telescope").setup({
     find_files = {
       theme = "dropdown",
       previewer = false,
+      hidden = true,
       no_ignore = true, -- show files ignored
     },
     live_grep = {
@@ -72,12 +73,16 @@ require("telescope").setup({
 })
 
 local builtin = require("telescope.builtin")
-vim.keymap.set("n", "<leader><leader>", builtin.find_files)
-vim.keymap.set("n", "<leader>/", builtin.live_grep)
-vim.keymap.set("n", "<leader>*", builtin.grep_string)
-vim.keymap.set("n", "<leader>fb", builtin.buffers)
-vim.keymap.set("n", "<leader>fh", builtin.help_tags)
-vim.keymap.set("n", "<leader>fr", builtin.oldfiles)
-vim.keymap.set("n", "<leader>fs", builtin.lsp_document_symbols)
-vim.keymap.set("n", "<leader>fS", builtin.lsp_dynamic_workspace_symbols)
-vim.keymap.set("n", "<leader>fm", builtin.marks)
+vim.keymap.set("n", "<leader><leader>", builtin.find_files, { desc = "Find all files" })
+vim.keymap.set("n", "<leader>/", builtin.live_grep, { desc = "Search string" })
+vim.keymap.set("n", "<leader>*", builtin.grep_string, { desc = "Search current string" })
+vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Buffers" })
+vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Help doc" })
+vim.keymap.set("n", "<leader>fr", builtin.oldfiles, { desc = "Recent files" })
+vim.keymap.set("n", "<leader>fs", builtin.lsp_document_symbols, { desc = "Symbols (document)" })
+vim.keymap.set(
+  "n",
+  "<leader>fS",
+  builtin.lsp_dynamic_workspace_symbols,
+  { desc = "Symbols (workspace)" }
+)

@@ -31,5 +31,29 @@ return {
   { -- git integration on vim
     "tpope/vim-fugitive",
     event = "VeryLazy",
+    keys = {
+      {
+        "<leader>gg",
+        "<cmd>Git<cr>",
+        desc = "Fugitive",
+      },
+    },
+  },
+
+  {
+    "folke/which-key.nvim",
+    event = "VeryLazy",
+    config = function()
+      require("config.which-key")
+    end,
+    keys = {
+      {
+        "<leader>?",
+        function()
+          require("which-key").show({ global = false })
+        end,
+        desc = "Buffer Local Keymaps (which-key)",
+      },
+    },
   },
 }

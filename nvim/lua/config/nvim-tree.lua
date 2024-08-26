@@ -37,4 +37,4 @@ require("nvim-tree").setup({
   git = { enable = true, ignore = true },
 })
 
-vim.keymap.set("n", "<leader>e", "<cmd>NvimTreeToggle<cr>")
+vim.keymap.set("n", "<leader>e", "<cmd>NvimTreeToggle<cr>", { desc = "Explorer tree" })

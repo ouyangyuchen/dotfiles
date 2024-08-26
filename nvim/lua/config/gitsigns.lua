@@ -15,7 +15,7 @@ require("gitsigns").setup({
       else
         gitsigns.nav_hunk("next")
       end
-    end)
+    end, { desc = "Next hunk" })
 
     map("n", "[c", function()
       if vim.wo.diff then
@@ -23,30 +23,30 @@ require("gitsigns").setup({
       else
         gitsigns.nav_hunk("prev")
       end
-    end)
+    end, { desc = "Previous hunk" })
 
     -- Actions
-    map("n", "<leader>gs", gitsigns.stage_hunk)
-    map("n", "<leader>gr", gitsigns.reset_hunk)
+    map("n", "<leader>gs", gitsigns.stage_hunk, { desc = "Stage hunk" })
+    map("n", "<leader>gr", gitsigns.reset_hunk, { desc = "Reset hunk" })
     map("v", "<leader>gs", function()
       gitsigns.stage_hunk({ vim.fn.line("."), vim.fn.line("v") })
-    end)
+    end, { desc = "Stage hunk" })
     map("v", "<leader>gr", function()
       gitsigns.reset_hunk({ vim.fn.line("."), vim.fn.line("v") })
-    end)
-    map("n", "<leader>gS", gitsigns.stage_buffer)
-    map("n", "<leader>gu", gitsigns.undo_stage_hunk)
-    map("n", "<leader>gR", gitsigns.reset_buffer)
-    map("n", "<leader>gp", gitsigns.preview_hunk)
+    end, { desc = "Reset hunk" })
+    map("n", "<leader>gS", gitsigns.stage_buffer, { desc = "Stage buffer" })
+    map("n", "<leader>gu", gitsigns.undo_stage_hunk, { desc = "Unstage hunk" })
+    map("n", "<leader>gR", gitsigns.reset_buffer, { desc = "Reset buffer" })
+    map("n", "<leader>gp", gitsigns.preview_hunk, { desc = "Preview hunk" })
     map("n", "<leader>gb", function()
       gitsigns.blame_line({ full = true })
-    end)
-    map("n", "<leader>gtb", gitsigns.toggle_current_line_blame)
-    map("n", "<leader>gd", gitsigns.diffthis)
+    end, { desc = "Blame" })
+    map("n", "<leader>gtb", gitsigns.toggle_current_line_blame, { desc = "Toggle blame" })
+    map("n", "<leader>gd", gitsigns.diffthis, { desc = "Diff this" })
     map("n", "<leader>gD", function()
       gitsigns.diffthis("~")
-    end)
-    map("n", "<leader>gtd", gitsigns.toggle_deleted)
+    end, { desc = "Diff this ~" })
+    map("n", "<leader>gtd", gitsigns.toggle_deleted, { desc = "Toggle deleted" })
 
     -- Text object
     map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>")
