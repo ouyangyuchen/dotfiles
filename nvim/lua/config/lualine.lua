@@ -22,7 +22,7 @@ require("lualine").setup({
         sources = { "nvim_diagnostic", "coc" },
         sections = { "error", "warn" },
         update_in_insert = false,
-        always_visible = true,
+        always_visible = false,
       },
       "diff",
     },

@@ -16,6 +16,8 @@ set timeoutlen=1000
 set updatetime=400
 
 " appearance
+set background=light
+syntax on
 if has('termguicolors')
   set termguicolors
 endif
