@@ -8,6 +8,8 @@ local servers = {
       },
     },
   },
+
+  clangd = {},
 }
 
 local lspconfig = require("lspconfig")
