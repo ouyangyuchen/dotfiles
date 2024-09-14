@@ -1,3 +1,16 @@
+" Install plug.vim:
+" curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+call plug#begin()
+
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
+
+Plug 'sainnhe/gruvbox-material'
+
+call plug#end()
+
 let mapleader=' '
 let maplocalleader='\\'
 
@@ -21,6 +34,10 @@ syntax on
 if has('termguicolors')
   set termguicolors
 endif
+let g:gruvbox_material_foreground='mix'
+let g:gruvbox_material_background='hard'
+colorscheme gruvbox-material
+
 set wildmenu
 set number
 set signcolumn=yes
