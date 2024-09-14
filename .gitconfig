@@ -1,5 +1,5 @@
 [core]
-	editor = vim
+	editor = nvim
 [user]
 	email = ouyangyuchen619@gmail.com
 	name = Yuchen Ouyang
