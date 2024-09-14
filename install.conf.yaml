@@ -10,7 +10,6 @@
 
     # editor
     ~/.vimrc: .vimrc
-    ~/.config/nvim: nvim
 
 # - create:
 
