@@ -10,6 +10,7 @@
 
     # editor
     ~/.vimrc: .vimrc
+    ~/.ideavimrc: .ideavimrc
 
 # - create:
 
