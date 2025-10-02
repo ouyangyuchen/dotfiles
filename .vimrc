@@ -29,7 +29,7 @@ set timeoutlen=1000
 set updatetime=400
 
 " appearance
-set background=light
+set background=dark
 syntax on
 if has('termguicolors')
   set termguicolors
@@ -43,7 +43,7 @@ set number
 set signcolumn=yes
 set laststatus=2 showtabline=0 ruler
 set scrolloff=5
-set nowrap
+set wrap
 
 " indent
 set expandtab
