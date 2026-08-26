@@ -11,10 +11,10 @@ Plug 'sainnhe/gruvbox-material'
 
 call plug#end()
 
-let mapleader=' '
-let maplocalleader='\\'
+let mapleader=" "
+let maplocalleader = "\\"
 
-nnoremap <silent> <leader>e :Lex 30<cr>
+nnoremap <silent> <leader>e :30Lexplore<CR>
 nmap Q <nop>
 
 " basic settings
@@ -55,8 +55,8 @@ autocmd FileType * set formatoptions-=ro    " disable commenting in the next lin
 
 " search
 set ignorecase smartcase
-set incsearch nohlsearch
-nnoremap <silent> <C-n> :noh<cr>
+set incsearch hlsearch
+nnoremap <silent> <leader>n :noh<cr>
 
 " edit text
 nnoremap <silent> <M-k> :m .-2<CR>==
