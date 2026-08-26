@@ -12,6 +12,8 @@
     ~/.vimrc: .vimrc
     ~/.ideavimrc: .ideavimrc
 
+    ~/.tmux.conf: .tmux.conf
+
 # - create:
 
 - shell:
