@@ -14,6 +14,20 @@
 
     ~/.tmux.conf: .tmux.conf
 
+    # ai
+    ~/.claude/skills:
+      path: skills
+      create: true
+      backup: true
+    ~/.agents/skills:
+      path: skills
+      create: true
+      backup: true
+    ~/.cursor/skills:
+      path: skills
+      create: true
+      backup: true
+
 # - create:
 
 - shell:
